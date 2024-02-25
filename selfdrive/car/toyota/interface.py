@@ -93,7 +93,7 @@ class CarInterface(CarInterfaceBase):
       ret.steerRatio = 16.  # 14.8 is spec end-to-end
       ret.wheelSpeedFactor = 1.035
       ret.tireStiffnessFactor = 0.5533
-      ret.mass = 4481. * CV.LB_TO_KG  # mean between min and max
+      ret.mass = 4222. * CV.LB_TO_KG  # mean between min and max
 
     elif candidate in (CAR.CHR, CAR.CHR_TSS2):
       stop_and_go = True

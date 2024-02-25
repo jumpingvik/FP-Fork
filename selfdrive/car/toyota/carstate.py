@@ -240,6 +240,13 @@ class CarState(CarStateBase):
     if self.CP.carFingerprint != CAR.PRIUS_V:
       self.lkas_hud = copy.copy(cp_cam.vl["LKAS_HUD"])
 
+    # if openpilot does not control longitudinal and we are running on a TSS-P car, it is assumed that
+    # 0x343 will be present on the ADAS Bus. PCM wants to resume when:
+    # 1) the car is no longer sending standstill
+    # 2) the car is still in standstill
+    if not self.CP.openpilotLongitudinalControl and self.CP.carFingerprint not in (TSS2_CAR, CAR.LEXUS_IS, CAR.LEXUS_RC):
+      self.stock_resume_ready = cp.vl["ACC_CONTROL"]["RELEASE_STANDSTILL"] == 1
+
     self._update_traffic_signals(cp_cam)
     ret.cruiseState.speedLimit = self._calculate_speed_limit()
 
