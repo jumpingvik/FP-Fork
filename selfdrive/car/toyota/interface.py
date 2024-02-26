@@ -276,10 +276,8 @@ class CarInterface(CarInterfaceBase):
     sp_tss2_long_tune = Params().get_bool("ToyotaTSS2Long")
 
     tune = ret.longitudinalTuning
-    #tune.deadzoneBP = [0., 9.]
-     tune.deadzoneBP = [0., 12., 20.]
-    #tune.deadzoneV = [.0, .15]
-     tune.deadzoneV = [0., .05, .08]
+    tune.deadzoneBP = [0., 9.]
+    tune.deadzoneV = [.0, .15]
 
     if candidate in TSS2_CAR or ret.enableGasInterceptor:
       ret.stopAccel = -2.5
