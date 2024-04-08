@@ -19,7 +19,7 @@ def iscar(started: bool, params: Params, CP: car.CarParams) -> bool:
 
 def logging(started, params, CP: car.CarParams) -> bool:
   run = (not CP.notCar) or not params.get_bool("DisableLogging")
-  return started and run
+  return False
 
 def ublox_available() -> bool:
   return os.path.exists('/dev/ttyHS0') and not os.path.exists('/persist/comma/use-quectel-gps')
@@ -46,14 +46,14 @@ procs = [
   DaemonProcess("manage_athenad", "selfdrive.athena.manage_athenad", "AthenadPid"),
 
   NativeProcess("camerad", "system/camerad", ["./camerad"], driverview),
-  NativeProcess("logcatd", "system/logcatd", ["./logcatd"], only_onroad),
-  NativeProcess("proclogd", "system/proclogd", ["./proclogd"], only_onroad),
-  PythonProcess("logmessaged", "system.logmessaged", always_run),
+  NativeProcess("logcatd", "system/logcatd", ["./logcatd"], logging),
+  NativeProcess("proclogd", "system/proclogd", ["./proclogd"], logging),
+  PythonProcess("logmessaged", "system.logmessaged", logging),
   PythonProcess("micd", "system.micd", iscar),
   PythonProcess("timed", "system.timed", always_run, enabled=not PC),
 
   PythonProcess("dmonitoringmodeld", "selfdrive.modeld.dmonitoringmodeld", driverview, enabled=(not PC or WEBCAM)),
-  NativeProcess("encoderd", "system/loggerd", ["./encoderd"], only_onroad),
+  NativeProcess("encoderd", "system/loggerd", ["./encoderd"], logging),
   NativeProcess("stream_encoderd", "system/loggerd", ["./encoderd", "--stream"], notcar),
   NativeProcess("loggerd", "system/loggerd", ["./loggerd"], logging),
   NativeProcess("modeld", "selfdrive/modeld", ["./modeld"], only_onroad),
@@ -78,10 +78,10 @@ procs = [
   PythonProcess("plannerd", "selfdrive.controls.plannerd", only_onroad),
   PythonProcess("radard", "selfdrive.controls.radard", only_onroad),
   PythonProcess("thermald", "selfdrive.thermald.thermald", always_run),
-  PythonProcess("tombstoned", "selfdrive.tombstoned", always_run, enabled=not PC),
-  PythonProcess("updated", "selfdrive.updated", only_offroad, enabled=not PC),
-  PythonProcess("uploader", "system.loggerd.uploader", always_run),
-  PythonProcess("statsd", "selfdrive.statsd", always_run),
+  PythonProcess("tombstoned", "selfdrive.tombstoned", logging, enabled=not PC),
+  PythonProcess("updated", "selfdrive.updated", always_run, enabled=not PC),
+  PythonProcess("uploader", "system.loggerd.uploader", logging),
+  PythonProcess("statsd", "selfdrive.statsd", logging),
   NativeProcess("ui", "selfdrive/ui", ["./ui"], always_run, watchdog_max_dt=(5 if not PC else None), always_watchdog=True),
 
   # PFEIFER - MAPD {{
