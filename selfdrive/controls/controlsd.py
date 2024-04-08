@@ -217,7 +217,14 @@ class Controls:
       IGNORE_PROCESSES.update({"dmonitoringd", "dmonitoringmodeld"})
       self.camera_packets.remove("driverCameraState")
 
-    ignore = self.sensor_packets + ['testJoystick']
+    #vik removing dm stuff
+    IGNORE_PROCESSES.update({"dmonitoringd", "dmonitoringmodeld"})
+    self.camera_packets.remove("driverCameraState")
+    ignore += ['driverMonitoringState']
+    ignore += ['driverCameraState', 'managerState']
+    #EOF
+
+   ignore = self.sensor_packets + ['testJoystick']
     if SIMULATION:
       ignore += ['driverCameraState', 'managerState']
     if self.d_camera_hardware_missing:
