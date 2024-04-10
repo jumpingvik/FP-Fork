@@ -222,6 +222,9 @@ class Controls:
       ignore += ['driverCameraState', 'managerState']
     if self.d_camera_hardware_missing:
       ignore += ['driverMonitoringState']
+
+    ignore += ['driverMonitoringState']
+
     lateral_plan_svs = ['lateralPlanDEPRECATED', 'lateralPlanSPDEPRECATED']
     self.sm = messaging.SubMaster(['deviceState', 'pandaStates', 'peripheralState', 'modelV2', 'liveCalibration',
                                    'driverMonitoringState', 'longitudinalPlan', 'liveLocationKalman',
