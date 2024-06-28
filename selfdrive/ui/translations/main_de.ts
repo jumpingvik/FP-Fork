@@ -15,6 +15,10 @@
         <source>Reboot and Update</source>
         <translation>Aktualisieren und neu starten</translation>
     </message>
+    <message>
+        <source>Disable Internet Check</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AdvancedNetworking</name>
@@ -86,6 +90,26 @@
         <source>for &quot;%1&quot;</source>
         <translation type="unfinished">für &quot;%1&quot;</translation>
     </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only Onroad</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Until Reboot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Allow tethering with your data SIM and keep it active either while driving or continuously.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AnnotatedCameraWidget</name>
@@ -108,6 +132,156 @@
     <message>
         <source>LIMIT</source>
         <translation>LIMIT</translation>
+    </message>
+    <message>
+        <source>Vehicle in blind spot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>m/s²</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>m/s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>kph</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> ft/s²</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accel: %1%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> - Max: %1%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> | Obstacle: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>  |  Obstacle Factor: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> - Stop: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>  -  Stop Factor: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Follow: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Follow Distance: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm speed limit
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ignore speed limit
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Conditional Experimental Mode ready</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Conditional Experimental overridden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Experimental Mode manually activated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Experimental Mode activated for %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>low speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>speed being less than %1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Experimental Mode activated for turn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> / lane change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Experimental Mode activated for intersection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Experimental Mode activated for upcoming turn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Experimental Mode activated for curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Experimental Mode activated for stopped lead</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Experimental Mode activated for slower lead</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Experimental Mode activated %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Experimental Mode forced on %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Experimental Mode activated due to no speed limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always On Lateral active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>. Press the &quot;Cruise Control&quot; button to disable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>. Long press the &quot;distance&quot; button to revert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>. Click the &quot;LKAS&quot; button to revert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>. Double tap the screen to revert</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -337,6 +511,10 @@
             <numerusform>Mindestens %n Buchstaben benötigt!</numerusform>
         </translation>
     </message>
+    <message>
+        <source>Characters: %1/%2</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Installer</name>
@@ -368,6 +546,10 @@
     </message>
     <message>
         <source>Manage at connect.comma.ai</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage at %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -590,7 +772,7 @@
     </message>
     <message>
         <source>openpilot</source>
-        <translation>openpilot</translation>
+        <translation type="vanished">openpilot</translation>
     </message>
     <message numerus="yes">
         <source>%n minute(s) ago</source>
@@ -631,6 +813,10 @@
     </message>
     <message>
         <source>now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FrogPilot</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -678,7 +864,7 @@ This may take up to a minute.</source>
     <name>SettingsWindow</name>
     <message>
         <source>×</source>
-        <translation>x</translation>
+        <translation type="vanished">x</translation>
     </message>
     <message>
         <source>Device</source>
@@ -695,6 +881,14 @@ This may take up to a minute.</source>
     <message>
         <source>Software</source>
         <translation>Software</translation>
+    </message>
+    <message>
+        <source>← Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FrogPilot</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -890,6 +1084,30 @@ This may take up to a minute.</source>
         <source>5G</source>
         <translation>5G</translation>
     </message>
+    <message>
+        <source>GPU</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CPU</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> GB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MEMORY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LEFT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>USED</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SoftwarePanel</name>
@@ -912,7 +1130,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Updates are only downloaded while the car is off.</source>
-        <translation>Updates werden nur heruntergeladen, wenn das Auto aus ist.</translation>
+        <translation type="vanished">Updates werden nur heruntergeladen, wenn das Auto aus ist.</translation>
     </message>
     <message>
         <source>Current Version</source>
@@ -964,6 +1182,34 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Updates are only downloaded while the car is off or in park.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatically Update FrogPilot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FrogPilot will automatically update itself and it&apos;s assets when you&apos;re offroad and connected to Wi-Fi.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to permanently delete any additional FrogPilot assets? This is 100% unrecoverable and includes backups, downloaded models, themes, and long-term storage toggle settings for easy reinstalls.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>VIEW</source>
+        <translation type="unfinished">ANSEHEN</translation>
+    </message>
+    <message>
+        <source>View the error log for openpilot crashes.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1149,10 +1395,6 @@ This may take up to a minute.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>An alpha version of openpilot longitudinal control can be tested, along with Experimental mode, on non-release branches.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Enable the openpilot longitudinal control (alpha) toggle to allow Experimental mode.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1162,14 +1404,6 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>The driving visualization will transition to the road-facing wide-angle camera at low speeds to better show some turns. The Experimental mode logo will also be shown in the top right corner.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Always-On Driver Monitoring</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable driver monitoring even when openpilot is not engaged.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1228,6 +1462,14 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Training data will be pulled periodically while your device is on Wi-Fi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uploading disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle off the &apos;Disable Uploading&apos; toggle to enable uploads.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
