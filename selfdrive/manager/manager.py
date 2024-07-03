@@ -103,7 +103,7 @@ def manager_init() -> None:
     ("OsmDownloadedDate", "0"),
     ("OSMDownloadProgress", "{}"),
     ("MapdVersion", f"{VERSION}"),
-    ("SunnylinkEnabled", "1"),
+    ("SunnylinkEnabled", "0"),
   ]
   if not PC:
     default_params.append(("LastUpdateTime", datetime.datetime.utcnow().isoformat().encode('utf8')))
