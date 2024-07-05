@@ -125,7 +125,7 @@ class CarController:
       pedal_command = PEDAL_SCALE * (actuators.accel + pedal_offset)
       interceptor_gas_cmd = clip(pedal_command, 0., MAX_INTERCEPTOR_GAS)
     elif CC.longActive and actuators.accel > 0. and self.CP.carFingerprint in STOP_AND_GO_CAR and self.CP.enableGasInterceptor and CS.out.vEgo < 1e-3:
-      interceptor_gas_cmd = 0.04
+      interceptor_gas_cmd = 0.12
     else:
       interceptor_gas_cmd = 0.
 
