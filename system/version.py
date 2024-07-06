@@ -10,7 +10,7 @@ from openpilot.common.swaglog import cloudlog
 
 RELEASE_BRANCHES = ['release3-staging', 'release3', 'nightly']
 RELEASE_SP_BRANCHES = ['release-c3']
-TESTED_BRANCHES = RELEASE_BRANCHES + RELEASE_SP_BRANCHES + ['devel', 'devel-staging', 'dev-c3']
+TESTED_BRANCHES = RELEASE_BRANCHES + RELEASE_SP_BRANCHES + ['devel', 'devel-staging', 'SP-dev-c3']
 
 training_version: bytes = b"0.2.0"
 terms_version: bytes = b"2"
