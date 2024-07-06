@@ -281,7 +281,7 @@ class CarInterface(CarInterfaceBase):
     ret.stopAccel = -2.5
 
     tune = ret.longitudinalTuning
-    tune.deadzoneBP = [0., 5., 12., 20.]
+    """tune.deadzoneBP = [0., 5., 12., 20.]
     tune.deadzoneV = [0., .03, .08, .1]
     ret.stoppingDecelRate = 0.17  # This is okay for TSS-P
     if candidate in TSS2_CAR:
@@ -291,7 +291,15 @@ class CarInterface(CarInterfaceBase):
     tune.kpBP = [0.]
     tune.kpV = [1.]
     tune.kiBP = [0.]
-    tune.kiV = [1.]
+    tune.kiV = [1.]"""
+    #cydia tune from SP toyota-prebuilt 6/28
+    tune.deadzoneBP = [0., 5., 6., 7., 20., 30] 
+    tune.deadzoneV = [0., 0., 0.001, 0.003, 0.06, 0.15]
+    ret.stoppingDecelRate = 0.17  # This is okay for TSS-P
+    tune.kpBP = [0., 5.]
+    tune.kpV = [0.8, 1.]
+    tune.kiBP = [0., 5.]
+    tune.kiV = [0.3, 1.]
 
     return ret
 
