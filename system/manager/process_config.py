@@ -21,7 +21,7 @@ def iscar(started: bool, params: Params, CP: car.CarParams) -> bool:
 
 def logging(started, params, CP: car.CarParams) -> bool:
   run = (not CP.notCar) or not params.get_bool("DisableLogging")
-  return started and run
+  return False
 
 def ublox_available() -> bool:
   return os.path.exists('/dev/ttyHS0') and not os.path.exists('/persist/comma/use-quectel-gps')
@@ -67,14 +67,14 @@ procs = [
   DaemonProcess("manage_athenad", "system.athena.manage_athenad", "AthenadPid"),
 
   NativeProcess("camerad", "system/camerad", ["./camerad"], driverview),
-  NativeProcess("logcatd", "system/logcatd", ["./logcatd"], only_onroad),
-  NativeProcess("proclogd", "system/proclogd", ["./proclogd"], only_onroad),
-  PythonProcess("logmessaged", "system.logmessaged", always_run),
+  NativeProcess("logcatd", "system/logcatd", ["./logcatd"], logging),
+  NativeProcess("proclogd", "system/proclogd", ["./proclogd"], logging),
+  PythonProcess("logmessaged", "system.logmessaged", logging),
   PythonProcess("micd", "system.micd", iscar),
   PythonProcess("timed", "system.timed", always_run, enabled=not PC),
 
-  PythonProcess("dmonitoringmodeld", "selfdrive.modeld.dmonitoringmodeld", driverview, enabled=(not PC or WEBCAM)),
-  NativeProcess("encoderd", "system/loggerd", ["./encoderd"], only_onroad),
+  PythonProcess("dmonitoringmodeld", "selfdrive.modeld.dmonitoringmodeld", logging, enabled=(not PC or WEBCAM)),
+  NativeProcess("encoderd", "system/loggerd", ["./encoderd"], logging),
   NativeProcess("stream_encoderd", "system/loggerd", ["./encoderd", "--stream"], notcar),
   NativeProcess("loggerd", "system/loggerd", ["./loggerd"], logging),
   NativeProcess("modeld", "selfdrive/modeld", ["./modeld"], only_onroad),
@@ -90,7 +90,7 @@ procs = [
   PythonProcess("controlsd", "selfdrive.controls.controlsd", only_onroad),
   PythonProcess("card", "selfdrive.car.card", only_onroad),
   PythonProcess("deleter", "system.loggerd.deleter", always_run),
-  PythonProcess("dmonitoringd", "selfdrive.monitoring.dmonitoringd", driverview, enabled=(not PC or WEBCAM)),
+  PythonProcess("dmonitoringd", "selfdrive.monitoring.dmonitoringd", logging, enabled=(not PC or WEBCAM)),
   PythonProcess("qcomgpsd", "system.qcomgpsd.qcomgpsd", qcomgps, enabled=TICI),
   #PythonProcess("ugpsd", "system.ugpsd", only_onroad, enabled=TICI),
   PythonProcess("navd", "selfdrive.navd.navd", only_onroad),
@@ -101,10 +101,10 @@ procs = [
   PythonProcess("plannerd", "selfdrive.controls.plannerd", only_onroad),
   PythonProcess("radard", "selfdrive.controls.radard", only_onroad),
   PythonProcess("hardwared", "system.hardware.hardwared", always_run),
-  PythonProcess("tombstoned", "system.tombstoned", always_run, enabled=not PC),
-  NativeProcess("updated", "system/updated", ["./updated.py"], only_offroad, enabled=not PC),
-  PythonProcess("uploader", "system.loggerd.uploader", always_run),
-  PythonProcess("statsd", "system.statsd", always_run),
+  PythonProcess("tombstoned", "system.tombstoned", logging, enabled=not PC),
+  PythonProcess("updated", "system.updated.updated", always_run, enabled=not PC),
+  PythonProcess("uploader", "system.loggerd.uploader", logging),
+  PythonProcess("statsd", "system.statsd", logging),
 
   # PFEIFER - MAPD {{
   NativeProcess("mapd", COMMON_DIR, [MAPD_PATH], always_run, enabled=not PC),
