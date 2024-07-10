@@ -100,6 +100,9 @@ class Controls:
       ignore += ['roadCameraState', 'wideRoadCameraState']
     if FrogPilotVariables.toggles.radarless_model:
       ignore += ['radarState']
+
+    ignore += ['driverMonitoringState','driverCameraState']
+
     self.sm = messaging.SubMaster(['deviceState', 'pandaStates', 'peripheralState', 'modelV2', 'liveCalibration',
                                    'carOutput', 'driverMonitoringState', 'longitudinalPlan', 'liveLocationKalman',
                                    'managerState', 'liveParameters', 'radarState', 'liveTorqueParameters',
