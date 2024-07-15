@@ -125,6 +125,8 @@ class Controls:
     if not self._dp_lat_lane_priority_mode:
       ignore += ['lateralPlan']
 
+    ignore += ['driverMonitoringState', 'driverCameraState']  
+
     self.sm = messaging.SubMaster(['deviceState', 'pandaStates', 'peripheralState', 'modelV2', 'liveCalibration',
                                    'carOutput', 'driverMonitoringState', 'longitudinalPlan', 'liveLocationKalman',
                                    'managerState', 'liveParameters', 'radarState', 'liveTorqueParameters',
