@@ -139,7 +139,9 @@ class DynamicExperimentalController:
     self._has_lead_filtered = self._lead_gmac.get_moving_average() >= LEAD_PROB
 
     # slow down detection
-    self._slow_down_gmac.add_data(len(md.orientation.x) == len(md.position.x) == TRAJECTORY_SIZE and md.position.x[TRAJECTORY_SIZE - 1] < interp(self._v_ego_kph, SLOW_DOWN_BP, SLOW_DOWN_DIST))
+    #self._slow_down_gmac.add_data(len(md.orientation.x) == len(md.position.x) == TRAJECTORY_SIZE and md.position.x[TRAJECTORY_SIZE - 1] < interp(self._v_ego_kph, SLOW_DOWN_BP, SLOW_DOWN_DIST))
+    self._slow_down_gmac.add_data(len(md.orientation.x) == len(md.position.x) == ModelConstants.IDX_N and md.position.x[ModelConstants.IDX_N - 1] < self._v_ego_kph * ModelConstants.T_IDXS[ModelConstants.IDX_N - ModelConstants.CONFIDENCE_BUFFER_LEN]
+))
     self._has_slow_down = self._slow_down_gmac.get_moving_average() >= SLOW_DOWN_PROB
 
     # blinker detection
