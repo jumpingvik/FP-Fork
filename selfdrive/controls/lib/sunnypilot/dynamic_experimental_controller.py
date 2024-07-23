@@ -31,8 +31,8 @@ LEAD_PROB = 0.6
 
 SLOW_DOWN_WINDOW_SIZE = 5
 SLOW_DOWN_PROB = 0.6
-#SLOW_DOWN_BP = [0., 10., 20., 30., 40., 50., 55., 60.]
-#SLOW_DOWN_DIST = [20, 30., 50., 70., 80., 90., 105., 120.]
+SLOW_DOWN_BP = [0., 10., 20., 30., 40., 50., 55., 60.]
+SLOW_DOWN_DIST = [20, 30., 50., 70., 80., 90., 105., 120.]
 
 SLOWNESS_WINDOW_SIZE = 20
 SLOWNESS_PROB = 0.6
@@ -139,8 +139,8 @@ class DynamicExperimentalController:
     self._has_lead_filtered = self._lead_gmac.get_moving_average() >= LEAD_PROB
 
     # slow down detection
-    #self._slow_down_gmac.add_data(len(md.orientation.x) == len(md.position.x) == TRAJECTORY_SIZE and md.position.x[TRAJECTORY_SIZE - 1] < interp(self._v_ego_kph, SLOW_DOWN_BP, SLOW_DOWN_DIST))
-    self._slow_down_gmac.add_data(len(md.orientation.x) == len(md.position.x) == ModelConstants.IDX_N and md.position.x[ModelConstants.IDX_N - 1] < self._v_ego_kph * ModelConstants.T_IDXS[ModelConstants.IDX_N - ModelConstants.CONFIDENCE_BUFFER_LEN])
+    self._slow_down_gmac.add_data(len(md.orientation.x) == len(md.position.x) == TRAJECTORY_SIZE and md.position.x[TRAJECTORY_SIZE - 1] < interp(self._v_ego_kph, SLOW_DOWN_BP, SLOW_DOWN_DIST))
+    #self._slow_down_gmac.add_data(len(md.orientation.x) == len(md.position.x) == ModelConstants.IDX_N and md.position.x[ModelConstants.IDX_N - 1] < self._v_ego_kph * ModelConstants.T_IDXS[ModelConstants.IDX_N - ModelConstants.CONFIDENCE_BUFFER_LEN])
     self._has_slow_down = self._slow_down_gmac.get_moving_average() >= SLOW_DOWN_PROB
 
     # blinker detection
