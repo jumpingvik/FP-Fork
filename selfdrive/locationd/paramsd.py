@@ -96,10 +96,9 @@ class ParamsLearner:
       self.steering_angle = msg.steeringAngleDeg
       self.speed = msg.vEgo
 
-      complex_dynamics = abs(msg.aEgo) > 0.5 or abs(msg.steeringRateDeg) > 20
+      complex_dynamics = abs(msg.aEgo) > 0.5 or abs(msg.steeringRateDeg) > 10
       in_linear_region = abs(self.steering_angle) < 45
-      self.active = self.speed > MIN_ACTIVE_SPEED and in_linear_region nd not complex_dynamics
-
+      self.active = self.speed > MIN_ACTIVE_SPEED and in_linear_region and not complex_dynamics
       if self.active:
         self.kf.predict_and_observe(t, ObservationKind.STEER_ANGLE, np.array([[math.radians(msg.steeringAngleDeg)]]))
         self.kf.predict_and_observe(t, ObservationKind.ROAD_FRAME_X_SPEED, np.array([[self.speed]]))
