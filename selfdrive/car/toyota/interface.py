@@ -77,7 +77,7 @@ class CarInterface(CarInterfaceBase):
     elif candidate in (CAR.LEXUS_RX, CAR.LEXUS_RX_TSS2):
       stop_and_go = True
       ret.wheelSpeedFactor = 1.035
-      ret.steerRatio = 20
+      #ret.steerRatio = 18
 
     elif candidate in (CAR.TOYOTA_AVALON, CAR.TOYOTA_AVALON_2019, CAR.TOYOTA_AVALON_TSS2):
       # starting from 2019, all Avalon variants have stop and go
