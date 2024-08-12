@@ -136,7 +136,17 @@ class CarInterface(CarInterfaceBase):
     ret.minEnableSpeed = -1. if (candidate in STOP_AND_GO_CAR or ret.enableGasInterceptor) else MIN_ACC_SPEED
 
     tune = ret.longitudinalTuning
-    if params.get_bool("CydiaTune") or params.get_bool("FrogsGoMooTune"):
+    #stock FP variable
+    ret.stopAccel = -2.5
+    #custom tss2 tuning sp kumar tune
+    ret.vEgoStopping = 0.15
+    ret.vEgoStarting = 0.15
+    ret.stoppingDecelRate = 0.30
+    #kumar tune (lt-prebuilt original)
+    tune.kiBP = [0.,  5.,   12.,  20.,  27.,  36.,  50]
+    tune.kiV = [0.342, 0.23, 0.20, 0.17, 0.12, 0.08, 0.06]
+    
+    """if params.get_bool("CydiaTune") or params.get_bool("FrogsGoMooTune"):
       ret.stopAccel = -2.5             # on stock Toyota this is -2.5
       ret.stoppingDecelRate = 0.3      # reach stopping target smoothly
       if candidate in TSS2_CAR or ret.enableGasInterceptor:
@@ -160,7 +170,7 @@ class CarInterface(CarInterfaceBase):
         ret.stoppingDecelRate = 0.3  # reach stopping target smoothly
     else:
       tune.kiBP = [0.,  5.,   12.,  20.,  27.,  36.,  50]
-      tune.kiV = [0.342, 0.23, 0.20, 0.17, 0.12, 0.08, 0.06]
+      tune.kiV = [0.342, 0.23, 0.20, 0.17, 0.12, 0.08, 0.06]"""
 
     return ret
 
