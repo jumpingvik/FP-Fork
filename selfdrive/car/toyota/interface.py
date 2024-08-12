@@ -144,7 +144,7 @@ class CarInterface(CarInterfaceBase):
     ret.stoppingDecelRate = 0.30
     #kumar tune (lt-prebuilt original)
     tune.kiBP = [0.,  5.,   12.,  20.,  27.,  36.,  50]
-    tune.kiV = [0.342, 0.23, 0.20, 0.17, 0.12, 0.08, 0.06]
+    tune.kiV = [0.442, 0.33, 0.25, 0.17, 0.12, 0.08, 0.06]
     
     """if params.get_bool("CydiaTune") or params.get_bool("FrogsGoMooTune"):
       ret.stopAccel = -2.5             # on stock Toyota this is -2.5
