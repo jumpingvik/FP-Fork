@@ -137,14 +137,14 @@ class CarInterface(CarInterfaceBase):
 
     tune = ret.longitudinalTuning
     #stock FP variable
-    ret.stopAccel = -2.5
+    #ret.stopAccel = -2.5
     #custom tss2 tuning sp kumar tune
-    ret.vEgoStopping = 0.15
-    ret.vEgoStarting = 0.15
-    ret.stoppingDecelRate = 0.30
-    #kumar tune (lt-prebuilt original)
-    tune.kiBP = [0.,  5.,   12.,  20.,  27.,  36.,  50]
-    tune.kiV = [0.442, 0.33, 0.25, 0.17, 0.12, 0.08, 0.06]
+    ret.vEgoStopping = 0.25
+    ret.vEgoStarting = 0.25
+    ret.stoppingDecelRate = 0.0074
+    #stock
+    tune.kiBP = [0.,   12.,  20.,  27.,  36.,  50]
+    tune.kiV = [0.333, 0.203, 0.17, 0.12, 0.08, 0.06]
     
     """if params.get_bool("CydiaTune") or params.get_bool("FrogsGoMooTune"):
       ret.stopAccel = -2.5             # on stock Toyota this is -2.5
