@@ -164,7 +164,7 @@ class CarInterface(CarInterfaceBase):
     def custom_tss2_longitudinal_tuning():
       ret.vEgoStopping = 0.25
       ret.vEgoStarting = 0.25
-      ret.stoppingDecelRate = 0.25
+      ret.stoppingDecelRate = 0.17
 
     def default_tss2_longitudinal_tuning():
       ret.vEgoStopping = 0.25
