@@ -24,21 +24,22 @@ TEMP_STEER_FAULTS = (0, 9, 11, 21, 25)
 # - prolonged high driver torque: 17 (permanent)
 PERM_STEER_FAULTS = (3, 17)
 
+
 # Traffic signals for Speed Limit Controller - Credit goes to the DragonPilot team!
 @staticmethod
 def calculate_speed_limit(cp_cam, frogpilot_toggles):
   signals = ["TSGN1", "SPDVAL1", "SPLSGN1", "TSGN2", "SPLSGN2", "TSGN3", "SPLSGN3", "TSGN4", "SPLSGN4"]
   traffic_signals = {signal: cp_cam.vl["RSA1"].get(signal, cp_cam.vl["RSA2"].get(signal)) for signal in signals}
 
-  tsgn1 = traffic_signals.get("TSGN1", None)
-  spdval1 = traffic_signals.get("SPDVAL1", None)
+  tsgn1 = traffic_signals.get("TSGN1")
+  spdval1 = traffic_signals.get("SPDVAL1")
 
   if tsgn1 == 1 and not frogpilot_toggles.force_mph_dashboard:
     return spdval1 * CV.KPH_TO_MS
   elif tsgn1 == 36 or frogpilot_toggles.force_mph_dashboard:
     return spdval1 * CV.MPH_TO_MS
-  else:
-    return 0
+  return 0
+
 
 class CarState(CarStateBase):
   def __init__(self, CP):
@@ -64,7 +65,6 @@ class CarState(CarStateBase):
     self.acc_type = 1
     self.lkas_hud = {}
     self.pcm_accel_net = 0.0
-    self.slope_angle = 0.0
 
     # FrogPilot variables
     self.latActive_previous = False
@@ -273,7 +273,6 @@ class CarState(CarStateBase):
       ("BODY_CONTROL_STATE", 3),
       ("BODY_CONTROL_STATE_2", 2),
       ("ESP_CONTROL", 3),
-      ("VSC1S07", 20),
       ("EPS_STATUS", 25),
       ("BRAKE_MODULE", 40),
       ("WHEEL_SPEEDS", 80),
