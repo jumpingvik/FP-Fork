@@ -260,7 +260,7 @@ class CarInterfaceBase(ABC):
     return self.lat_torque_nn_model is not None
 
   def apply(self, c: car.CarControl, now_nanos: int, frogpilot_toggles) -> tuple[car.CarControl.Actuators, list[tuple[int, int, bytes, int]]]:
-    if self.CP.enableGasInterceptor and self.CP.carName == "toyota" and CS.out.vEgo <= MIN_ACC_SPEED:
+    if self.CP.enableGasInterceptor and self.CP.carName == "toyota" and self.CS.out.vEgo <= MIN_ACC_SPEED:
       return self.CC.update_pedal(c, self.CS, now_nanos, frogpilot_toggles)
     else:
       return self.CC.update(c, self.CS, now_nanos, frogpilot_toggles)
